@@ -6,7 +6,7 @@ Help_Page <- tabPanel(
     tags$li("2017年までのQualtricsはLegacyだぞ"), 
     tags$li("Legacyはヘッダーが2行分、現行版は3行分だぞ"), 
   ),
-  h3("Update Plan"),
+  h3("Sample Data"),
   tags$ul(
     tags$li("以下のダミーデータを使ってください。"), 
     tags$li(tags$a(href = "https://www.jaysong.net/software/Data/webconjoint_sample.csv",
@@ -19,6 +19,11 @@ Help_Page <- tabPanel(
     tags$li("Tableのカスタマイズ"), 
     tags$li("Rating/Rankへの対応"), 
     tags$li("UI改善（shinyWidgetsとかおしゃれだよね...）"),
+  ),
+  h3("Repository"),
+  tags$ul(
+    tags$li(tags$a(href = "https://github.com/JaehyunSong/web-conjoint",
+                   "https://github.com/JaehyunSong/web-conjoint"))
   ),
 )
 

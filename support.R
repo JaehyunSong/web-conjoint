@@ -14,7 +14,6 @@ Help_Page <- tabPanel(
   ),
   h3("Update Plan"),
   tags$ul(
-    tags$li("BY引数への対応"), 
     tags$li("特定のTaskのみを対象とした推定"), 
     tags$li("Tableのカスタマイズ"), 
     tags$li("Rating/Rankへの対応"), 

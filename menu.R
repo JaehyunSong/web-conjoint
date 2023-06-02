@@ -50,8 +50,9 @@ menu <- sidebarPanel(
                 multiple = TRUE),
     
     selectInput(inputId  = "model_by", 
-                label    = "BY（未対応）:",
-                choices  = ""),
+                label    = "BY:",
+                choices  = "",
+                multiple = FALSE),
     
     awesomeRadio(inputId = "model_estimator",
                  label = "Estimator:", 
@@ -64,11 +65,13 @@ menu <- sidebarPanel(
         condition = "input.model_by != ''",
         
         checkboxInput(inputId = "model_diff", 
-                      label   = "Difference（未対応）", 
+                      label   = "Difference", 
                       value   = FALSE),
     ),
     
     uiOutput("baselines"),
+    
+    uiOutput("baselines2"),
     
     conditionalPanel(
         condition = "input.model_estimator == 'mm'",
@@ -120,9 +123,13 @@ menu <- sidebarPanel(
                  max     = 5,
                  step    = 0.1),
     
-    switchInput(inputId    = "plot_facet",
-                label      = "Facets", 
-                width      = "100%"),
+    conditionalPanel(
+        condition = "input.model_by != ''",
+        
+        switchInput(inputId    = "plot_facet",
+                    label      = "Facets", 
+                    width      = "100%"),
+    ),
     
     conditionalPanel(
         condition = "input.plot_facet == 1",
@@ -137,7 +144,10 @@ menu <- sidebarPanel(
                 label      = "Legend", 
                 onLabel    = "Show",
                 offLabel   = "Hide",
-                width      = "100%"),
+                width      = "100%",
+                value      = TRUE),
     
-    width = 2
+    width = 2,
+    
+    style = "overflow-y:scroll; max-height: 1024px; position:relative;"
 )

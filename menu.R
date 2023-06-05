@@ -98,7 +98,18 @@ menu <- sidebarPanel(
 
     h4("Table"),
     
-    helpText("Unavailable"),
+    numericInput(inputId = "tbl_digits",
+                 label   = "Digits:",
+                 value   = 3,
+                 min     = 1,
+                 max     = 5),
+    
+    switchInput(inputId    = "tbl_highlight",
+                label      = "Highlight", 
+                onLabel    = "On",
+                offLabel   = "Off",
+                width      = "100%",
+                value      = FALSE),
     
     hr(),
     

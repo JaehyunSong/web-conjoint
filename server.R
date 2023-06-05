@@ -227,7 +227,7 @@ server <- function(input, output) {
         fit <- list("est" = fit_plot,
                     "tbl" = fit_tbl)
         
-        print(fit[["tbl"]])
+        #print(fit[["tbl"]])
         
         fit
     })
@@ -353,5 +353,7 @@ server <- function(input, output) {
     height = reactive(input$plot_height),
     res    = 150)
     
-    output$result_raw <- renderPrint(fit()[["table"]])
+    output$result_raw <- renderPrint({
+        fit()[["tbl"]]
+        })
 }
